@@ -8,9 +8,10 @@ import reviewRoutes from "./src/routes/reviewRoutes.js";
 dotenv.config();
 await connectDB();
 
+const app = express();
 app.use(cors());
 app.use(express.json());
-const app = express();
+
 
 // Rutas
 app.use('/api/juegos', gameRoutes);
@@ -23,5 +24,5 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
-    console.log('Servidor corriendo en ${PORT}')
+    console.log('Servidor corriendo en 3000')
 });
