@@ -19,10 +19,10 @@ app.use("/api/reviews", reviewRoutes);
 
 
 app.get('/', (req, res) => {
-    res.send('Gametracker API está funcionando')
+    res.send('Gametracker API está funcionando');
 });
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
-    console.log('Servidor corriendo en 3000')
+    console.log('Servidor corriendo en http://localhost:3000')
 });
