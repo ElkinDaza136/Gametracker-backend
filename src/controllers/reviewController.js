@@ -1,7 +1,7 @@
 import Review from "../models/Review.js";
 import Game from "../models/Game.js";
 
-// ✅ GET /api/reseñas - Obtener todas las reseñas
+// GET /api/reseñas - Obtener todas las reseñas
 export const obtenerReseñas = async (req, res) => {
   try {
     const reseñas = await Review.find().populate("juegoId");
@@ -11,7 +11,7 @@ export const obtenerReseñas = async (req, res) => {
   }
 };
 
-// ✅ GET /api/reseñas/juego/:juegoId - Reseñas de un juego específico
+// GET /api/reseñas/juego/:juegoId - Reseñas de un juego específico
 export const obtenerReseñasPorJuego = async (req, res) => {
   try {
     const { juegoId } = req.params;
@@ -22,7 +22,7 @@ export const obtenerReseñasPorJuego = async (req, res) => {
   }
 };
 
-// ✅ POST /api/reseñas - Crear nueva reseña
+// POST /api/reseñas - Crear nueva reseña
 export const agregarReseña = async (req, res) => {
   try {
     const { juegoId } = req.body;
@@ -37,7 +37,7 @@ export const agregarReseña = async (req, res) => {
   }
 };
 
-// ✅ PUT /api/reseñas/:id - Editar reseña existente
+// PUT /api/reseñas/:id - Editar reseña existente
 export const editarReseña = async (req, res) => {
   try {
     const actualizada = await Review.findByIdAndUpdate(
@@ -52,7 +52,7 @@ export const editarReseña = async (req, res) => {
   }
 };
 
-// ✅ DELETE /api/reseñas/:id - Eliminar reseña
+// DELETE /api/reseñas/:id - Eliminar reseña
 export const eliminarReseña = async (req, res) => {
   try {
     const eliminada = await Review.findByIdAndDelete(req.params.id);

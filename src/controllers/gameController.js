@@ -1,6 +1,6 @@
 import Game from "../models/Game.js";
 
-// ✅ GET /api/juegos - Obtener todos los juegos
+// GET /api/juegos - Obtener todos los juegos
 export const obtenerJuegos = async (req, res) => {
   try {
     const juegos = await Game.find().sort({ fechaCreacion: -1 });
@@ -10,7 +10,7 @@ export const obtenerJuegos = async (req, res) => {
   }
 };
 
-// ✅ GET /api/juegos/:id - Obtener un juego específico
+// GET /api/juegos/:id - Obtener un juego específico
 export const obtenerJuegoPorId = async (req, res) => {
   try {
     const juego = await Game.findById(req.params.id);
@@ -21,7 +21,7 @@ export const obtenerJuegoPorId = async (req, res) => {
   }
 };
 
-// ✅ POST /api/juegos - Crear nuevo juego
+// POST /api/juegos - Crear nuevo juego
 export const agregarJuego = async (req, res) => {
   try {
     const nuevoJuego = new Game(req.body);
@@ -32,7 +32,7 @@ export const agregarJuego = async (req, res) => {
   }
 };
 
-// ✅ PUT /api/juegos/:id - Editar juego existente
+// PUT /api/juegos/:id - Editar juego existente
 export const editarJuego = async (req, res) => {
   try {
     const actualizado = await Game.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -43,7 +43,7 @@ export const editarJuego = async (req, res) => {
   }
 };
 
-// ✅ DELETE /api/juegos/:id - Eliminar juego
+// DELETE /api/juegos/:id - Eliminar juego
 export const eliminarJuego = async (req, res) => {
   try {
     const eliminado = await Game.findByIdAndDelete(req.params.id);
